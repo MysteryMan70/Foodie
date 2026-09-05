@@ -1,0 +1,571 @@
+* {
+  font-family: Poppins;
+}
+
+:root {
+  --primary-color: #ff6b35;
+  --secondary-color: #f7c948;
+  --text-color: #212529;
+  --background-color: #fffdf9;
+  --light-section: #f8f9fa;
+  --border-radius: 12px;
+  --font-family: "Poppins", sans-serif;
+}
+
+/* NavBar Style */
+
+/* ================= NAVBAR ================= */
+#navbar {
+  height: 75px;
+}
+
+#navbar .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  background-color: #fffdf9 !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+#navbar .img-width {
+  width: 45px;
+}
+
+#navbar .text-color {
+  color: #ff6b35;
+}
+
+#navbar .font-weight {
+  font-weight: 500;
+}
+
+#navbar .transition {
+  transition: 0.5s ease;
+}
+
+/* ================= NAVBAR LINKS ================= */
+
+#navbar .nav-link {
+  width: fit-content;
+  color: #212529;
+  border-bottom: 2px solid transparent;
+  transition: 0.3s ease;
+}
+
+#navbar .nav-link:not(.active):hover {
+  color: #ff6b35 !important;
+  border-bottom-color: #ff6b35;
+}
+
+#navbar .nav-link.active {
+  color: #ff6b35 !important;
+  border-bottom-color: transparent !important;
+}
+
+#navbar .nav-link.active:hover {
+  color: #ff6b35 !important;
+  border-bottom-color: transparent !important;
+}
+
+#navbar .cart {
+  cursor: pointer;
+}
+
+#navbar .cart:hover {
+  color: #ff6b35;
+}
+
+.btn-style {
+  background-color: #ff6b35 !important;
+  border: 2px solid transparent !important;
+  color: #fff !important;
+}
+
+.btn-style:hover {
+  border: 2px solid #ff6b35 !important;
+  background-color: #fff !important;
+  color: #ff6b35 !important;
+}
+
+.fav-dot {
+  display: none;
+  width: 8px;
+  height: 8px;
+  background-color: orange;
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  right: -2px;
+}
+
+#cartBadge {
+  position: absolute;
+  top: -5px;
+  right: -7px;
+
+  width: 9px;
+  height: 9px;
+
+  background-color: #ff6b35;
+  border-radius: 50%;
+
+  display: none;
+}
+/* ================= LOGIN MODAL ================= */
+
+#navbar .inputheight {
+  height: 50px !important;
+}
+
+#navbar .login-modal {
+  max-width: 400px;
+  max-height: 550px !important;
+}
+
+/* ================= HOME ================= */
+
+#home {
+  background-color: #fffdf9;
+}
+
+.text-color {
+  color: #ff6b35;
+}
+
+.transition {
+  transition: 0.3s ease;
+}
+
+#home .buttonhover {
+  background-color: #ff6b35 !important;
+  border: 2px solid transparent !important;
+  color: #fff !important;
+}
+#home .buttonhover:hover {
+  border: 2px solid #ff6b35 !important;
+  background-color: #fff !important;
+  color: #ff6b35 !important;
+}
+
+.welcome {
+  border: 1px solid #f6f2eb;
+  border-radius: 15px;
+  padding-left: 11px;
+  width: 170px;
+  height: 25px;
+}
+
+.category-card {
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+  border: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0.05, 0.09);
+}
+
+.category-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 8px 20px rgba(255, 107, 53, 0.15) !important;
+}
+
+.category-card:hover .category-img img {
+  transform: scale(1.08);
+}
+
+.category-card .card-title {
+  color: #212529;
+}
+
+.display-flex {
+  display: flex !important;
+}
+
+.cursol {
+  cursor: pointer;
+}
+
+#home3 .product-title:hover {
+  cursor: pointer !important;
+  color: #ff6b35 !important;
+}
+
+/* Offer */
+
+.bgcolor {
+  background-color: #ff6b35;
+}
+
+.arrow-icon {
+  background-color: #ff6b35;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5px;
+  font-size: 11px;
+  transition: all 0.3s ease;
+}
+
+.offer-btn:hover .arrow-icon {
+  background-color: white;
+  color: #ff6b35;
+  transform: translateX(3px);
+}
+
+.offer-image-container {
+  height: 200px;
+}
+
+/* ================= HOME ================= */
+
+#home {
+  background-color: #fffdf9;
+}
+
+.text-color {
+  color: #ff6b35;
+}
+
+.transition {
+  transition: 0.5s ease;
+}
+
+.welcome {
+  border: 1px solid #f6f2eb;
+  border-radius: 15px;
+  padding-left: 11px;
+  width: 170px;
+  height: 25px;
+}
+
+#home3 .product-title:hover {
+  cursor: pointer !important;
+  color: #ff6b35 !important;
+}
+
+/* Offer */
+
+.bgcolor {
+  background-color: #ff6b35;
+}
+
+.arrow-icon {
+  background-color: #ff6b35;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5px;
+  font-size: 11px;
+  transition: all 0.3s ease;
+}
+
+.offer-image-container {
+  height: 200px;
+}
+
+.offer-btn {
+  background-color: #fff;
+  border: 2px solid transparent;
+  height: 40px;
+  width: 145px;
+}
+
+.offer-btn:hover {
+  border: 2px solid #fff;
+  color: #fff;
+}
+.offer-btn:focus {
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+/* Footer style  */
+footer .img-width {
+  width: 38px;
+  height: 38px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.footer-description {
+  font-size: 14px;
+  line-height: 1.8;
+  max-width: 280px;
+}
+.media a {
+  padding: 0.4rem 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.media a:hover {
+  background-color: #ff6b35;
+  border-color: #ff6b35;
+  color: white;
+  transform: translateY(-3px);
+}
+/* menu style  */
+/* Category Links gap */
+#menu-section .categoryListGaps {
+  gap: 8px;
+}
+#menu-section .categoryLink {
+  color: #212529 !important; /* Forces Bootstrap to stop making links blue */
+  font-weight: 500;
+  padding: 12px 20px;
+  border-radius: 12px;
+}
+#menu-section .categoryLink:hover {
+  background-color: #f8f9fa;
+  color: #ff6b35 !important;
+}
+/* Active Sidebar Category */
+#menu-section .categoryLink.active {
+  background-color: #ff6b35 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 10px rgba(255, 107, 53, 0.3);
+}
+/* Search Bar Wrapper */
+#menu-section .searchWrapper {
+  background-color: #ffffff;
+  border-radius: 16px !important;
+  border: 1px solid #f0f0f0;
+}
+/* Search Input Override */
+#menu-section .searchInput:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+/* Sort Dropdown Box */
+#menu-section .sortDropdown {
+  color: #212529;
+  background-color: #ffffff;
+  padding: 10px 35px 10px 15px;
+}
+#menu-section .sortDropdown:focus {
+  box-shadow: none !important;
+}
+
+/* Order Card */
+.orderCard {
+  border-radius: 16px !important;
+  background-color: #ffffff;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.orderCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* BadgeStyle */
+.orderBadge {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+/* Delivered Status */
+.orderDelivered {
+  background-color: #d1f5e0;
+  color: #279e56;
+}
+
+/* Cancelled Status*/
+.orderCancelled {
+  background-color: #fde0e0;
+  color: #d94545;
+}
+
+/* View Details Button  */
+.orderViewBtn {
+  background-color: transparent;
+  color: #212529;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 1px solid #e0e0e0;
+  padding: 10px 24px;
+  border-radius: 8px;
+}
+
+.orderViewBtn:hover {
+  background-color: #f8f9fa;
+  border-color: #d6d6d6;
+}
+
+/* Remove Bootstrap validation icon from password input */
+#inputPassword5.is-invalid {
+  background-image: none !important;
+  padding-right: 3rem !important;
+}
+
+/* =====================================================
+   User Account Button
+===================================================== */
+
+.user-account-btn {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.user-circle {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--primary-color);
+  color: white;
+
+  border-radius: 50%;
+
+  font-size: 18px;
+
+  transition: 0.3s ease;
+}
+
+.user-circle:hover {
+  transform: scale(1.05);
+}
+
+/* Small Circle Inside Dropdown */
+
+.user-circle.small {
+  width: 38px;
+  height: 38px;
+
+  font-size: 16px;
+
+  flex-shrink: 0;
+}
+
+.user-account-btn {
+  background: transparent;
+}
+
+.user-account-btn:hover .user-circle {
+  transform: scale(1.05);
+}
+
+.user-circle {
+  transition: 0.2s ease;
+}
+
+/* =====================================================
+   Account Dropdown
+===================================================== */
+
+.account-dropdown {
+  min-width: 260px;
+
+  border: none;
+  border-radius: 12px;
+
+  padding: 8px;
+
+  margin-top: 8px !important;
+}
+
+/* Dropdown Items */
+
+.account-dropdown .dropdown-item {
+  border-radius: 8px;
+  padding: 10px 12px;
+
+  transition: 0.2s ease;
+}
+
+.account-dropdown .dropdown-item:hover {
+  background-color: var(--light-section);
+}
+
+/* Account Text */
+
+.account-dropdown .dropdown-item-text {
+  padding: 8px 12px;
+}
+
+/* Prevent Email Overflow */
+
+#accountEmail,
+#userEmailText {
+  overflow-wrap: anywhere;
+}
+
+/* Media */
+@media (max-width: 991px) {
+  /* cart style  */
+  #cart .content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+  #cart .row {
+    width: 95%;
+    margin: auto;
+  }
+  #cart .img1-cart {
+    flex-direction: column;
+    align-items: center;
+  }
+  #cart .increment {
+    margin: 0 !important;
+  }
+  #cart .header-cart {
+    padding: 10px 0 !important;
+  }
+  #cart .parent-left {
+    margin-top: 20px !important;
+  }
+
+  #cart .orderSum {
+    padding: 0;
+  }
+  #cart .col-md-9,
+  #cart .col-md-3 {
+    width: 100%;
+  }
+  #cart .bg-form {
+    width: 100%;
+  }
+  #cart .heading-cart {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  #cart .img1-cart img {
+    width: 100%;
+    object-fit: cover;
+  }
+  #cart .parent-left-color .content {
+    content: none !important;
+  }
+  #cart .end {
+    width: 100%;
+    flex-direction: column;
+  }
+  #cart .end-span {
+    text-align: center;
+  }
+}

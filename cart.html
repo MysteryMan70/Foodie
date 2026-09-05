@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+      integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="Css/style.css" />
+    <link rel="stylesheet" href="Css/cart.css" />
+    <title>Foodie-cart</title>
+  </head>
+  <body>
+    <!-- ////////////////////////////////////////////////////// -->
+    <div id="navbar"></div>
+    <!-- ///////////////////////////////////////////////////// -->
+    <section id="cart" class="mb-5 mt-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9 mt-5 rounded-4 shadow-lg">
+            <div class="inner">
+              <div
+                class="heading-cart d-flex flex-wrap justify-content-between align-items-center p-4"
+              >
+                <div class="header1">Your Cart</div>
+                <button
+                  id="clearCartBtn"
+                  class="btn-heading-cart d-none d-lg-block py-2 px-4 rounded-3 bg-white shadow-sm"
+                >
+                  Clear Cart
+                </button>
+              </div>
+              <div id="cartContainer" class="parent mb-lg-5 rounded-3">
+                <!-- Products will be rendered here by JavaScript -->
+              </div>
+              <div
+                class="heading-cart d-flex flex-wrap d-lg-none justify-content-between p-4"
+              >
+                <button
+                  id="clearCartBtn"
+                  class="btn-heading-cart d-lg-none py-2 px-4 rounded-3 bg-white shadow-sm"
+                >
+                  Clear Cart
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 orderSum">
+            <div class="inner2">
+              <div class="parent-left shadow-lg p-3 mt-5 rounded-4">
+                <h2 class="">Order Summary</h2>
+                <div class="parent-left-color p-2 px-3 px-lg-2 rounded-3">
+                  <div class="d-flex justify-content-between pt-4">
+                    <p>Subtotal</p>
+                    <p id="subtotal">$0.00</p>
+                  </div>
+
+                  <div class="d-flex content2 justify-content-between py-3">
+                    <p>Delivery</p>
+                    <p id="delivery">$3.50</p>
+                  </div>
+
+                  <div class="d-flex justify-content-between pt-4">
+                    <p class="fw-bold">Total</p>
+                    <p id="cartTotal" class="number-color fw-bold">$0.00</p>
+                  </div>
+                </div>
+
+                <!-- Button trigger modal -->
+                <button
+                  type="button"
+                  id="checkoutBtn"
+                  class="Chackout text-white w-100 mt-4"
+                >
+                  Checkout
+                </button>
+
+                <!-- Modal -->
+                <div
+                  class="modal fade"
+                  id="exampleModal2"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                          Check out
+                        </h1>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        <div
+                          id="checkoutLoading"
+                          class="text-center py-5 d-none"
+                        >
+                          <div
+                            class="spinner-border text-color mb-4"
+                            role="status"
+                          >
+                            <span class="visually-hidden">Loading...</span>
+                          </div>
+
+                          <h4 class="fw-bold">Placing your order...</h4>
+                          <p class="text-secondary mb-0">
+                            Please wait while we process your order.
+                          </p>
+                        </div>
+
+                        <div
+                          id="checkoutSuccess"
+                          class="text-center py-5 d-none"
+                        >
+                          <div class="success-icon mb-4">
+                            <i class="fa-solid fa-check"></i>
+                          </div>
+
+                          <h3 class="fw-bold mb-2">
+                            Order Placed Successfully!
+                          </h3>
+
+                          <p class="text-secondary mb-0">
+                            Thank you for your order. Your delicious food is on
+                            the way!
+                          </p>
+                        </div>
+                        <div id="checkoutForm">
+                          <div class="mb-3">
+                            <label
+                              for="formGroupExampleInput"
+                              class="form-label fw-bold"
+                              >Full Name :</label
+                            >
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="fullName"
+                              placeholder="Enter your full name"
+                            />
+                          </div>
+                          <div class="mb-3">
+                            <label
+                              for="formGroupExampleInput2"
+                              class="form-label fw-bold"
+                              >Phone Number :</label
+                            >
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="phone"
+                              placeholder="Enter your phone number"
+                            />
+                          </div>
+                          <div class="mb-3">
+                            <label
+                              for="formGroupExampleInput2"
+                              class="form-label fw-bold"
+                              >Address :</label
+                            >
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="address"
+                              placeholder="Enter your address"
+                            />
+                          </div>
+                          <div class="mb-3 pb-4 content2">
+                            <h2
+                              class="col-form-label pb-2 w-100 col-sm-2 fw-bold pt-0"
+                            >
+                              Payment Method
+                            </h2>
+                            <div class="col-sm-10">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="radio"
+                                  name="gridRadios"
+                                  id="gridRadios1"
+                                  value="option1"
+                                  checked
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="gridRadios1"
+                                >
+                                  Cach on Delivery
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="radio"
+                                  name="gridRadios"
+                                  id="gridRadios2"
+                                  value="option2"
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="gridRadios2"
+                                >
+                                  Credit/ Debit Card
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="d-flex end justify-content-between flex-w"
+                          >
+                            <div class="end-span">
+                              <span>Total amount</span>
+                              <p id="modalTotal" class="number-color fw-bold">
+                                $0.00
+                              </p>
+                            </div>
+                            <button
+                              id="placeOrderBtn"
+                              class="Chackout text-white mt-3 mb-2"
+                            >
+                              <i
+                                class="fa-solid fa-lock"
+                                style="color: white"
+                              ></i>
+                              Place Order
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/component.js"></script>
+    <script src="./JS/cartBadge.js"></script>
+    
+    <script src="./JS/cart.js"></script>
+    <script>
+      function goToProduct(id) {
+        window.location.href = `./product-details.html?id=${id}`;
+      }
+    </script>
+ 
+
+  </body>
+</html>

@@ -1,0 +1,119 @@
+body{
+    background-image: url("/Assests/ChatGPT\ Image\ Aug\ 26\,\ 2026\,\ 09_02_26\ PM.png");
+}
+* {
+  font-family: Poppins;
+}
+
+:root {
+  --primary-color: #ff6b35;
+  --secondary-color: #f7c948;
+  --text-color: #212529;
+  --background-color: #fffdf9;
+  --light-section: #f8f9fa;
+  --border-radius: 12px;
+  --font-family: "Poppins", sans-serif;
+}
+hr{
+    width: 60px;
+    height: 2px;
+     border: none; 
+     background-color:#ff6b35 ;
+      opacity: 1;
+}
+ .favorites-page {
+    min-height: 100vh;
+
+    background-image: url("../Assests/favorites-bg.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+/* Page Title */
+
+.favorites-page h1 {
+    color: #222;
+    font-size: 42px;
+}
+
+.favorites-page h1 i {
+    color: #ff6500;
+}
+
+
+/* Product Card */
+
+.productCard .card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.10);
+ transition: all 0.3s ease;
+}
+
+.productCard .card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+ /* Product Image */
+
+.productCard .card-img-top {
+    height: 210px;
+    object-fit: cover;
+}
+ 
+/* Favorite Button */
+
+.favorite-btn {
+    position: absolute;
+  top: 15px;
+    right: 15px;
+ width: 45px;
+    height: 45px;
+ border: none;
+    border-radius: 50%;
+
+    background-color: white;
+
+    color: #ff3b30;
+
+    font-size: 20px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+
+    transition: all 0.3s ease;
+}
+
+.favorite-btn:hover {
+    background-color: #ff6500;
+    color: white;
+
+    transform: scale(1.1);
+}
+ 
+/* Price */
+
+.price {
+    color: #ff6500;
+    font-size: 20px;
+}
+ 
+/* Add Cart Button */
+ 
+.addCart {
+    background-color: #ff6500;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    padding: 10px;
+}
+
+.addCart:hover {
+    background-color: #e95700;
+    color: white;
+}

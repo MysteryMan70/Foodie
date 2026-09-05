@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+      integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    /> -->
+    <link rel="stylesheet" href="./Css/style.css" />
+    <link rel="stylesheet" href="./Css/productStyle.css" />
+  </head>
+  <body>
+    <!-- ////////////////////////////////////////////////////// -->
+    <div id="navbar"></div>
+    <!-- ///////////////////////////////////////////////////// -->
+    <div class="container-fluid product-container my-5">
+      <div class="display-5 text-center mb-5">Product Details</div>
+
+      <section id="product-details">
+        <section id="" class="productDetails py-5">
+          <div class="container">
+            <div class="row g-4 align-items-center">
+              <!-- Product Image -->
+              <div class="col-12 col-lg-6">
+                <div class="productImage">
+                  <img src="" alt="" class="img-fluid rounded-3 w-100" />
+                </div>
+              </div>
+
+              <!-- Product Info -->
+              <div class="col-12 col-lg-6">
+                <div class="productInfo">
+                  <p
+                    id="category"
+                    class="text-secondary mb-2 mb-lg-0 mb-xl-1"
+                  ></p>
+
+                  <h1 id="name" class="fw-bold mb-2"></h1>
+
+                  <!-- Rating -->
+                  <div class="rating mb-3">
+                    <i id="star" class="fa-solid fa-star text-warning"></i>
+                    <span id="rating"></span>
+                    <span id="ratingReviews" class="text-secondary"
+                      >(120 reviews)</span
+                    >
+                  </div>
+
+                  <!-- Price -->
+                  <h2 id="price" class="price fw-bold mb-3"></h2>
+
+                  <!-- Description -->
+                  <p id="desc" class="text-secondary mb-4"></p>
+
+                  <hr class="mb-lg-3" />
+
+                  <!-- Quantity -->
+                  <div class="quantity d-flex mb-4 mb-lg-3">
+                    <button id="decreaseBtn" class="btn">−</button>
+
+                    <span id="quantityValue">1</span>
+
+                    <button id="increaseBtn" class="btn">+</button>
+                  </div>
+
+                  <!-- Actions -->
+                  <div class="d-flex gap-2">
+                    <button id="addCartBtn" class="btn addCart flex-grow-1">
+                      Add to Cart
+                    </button>
+
+                    <button id="favoriteBtn" class="btn favorite">
+                      <i class="fa-regular fa-heart"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Same Products Section -->
+        <section class="sameProducts py-5">
+          <div class="container">
+            <div class="text-center mb-5">
+              <h2 class="fw-bold">Same Products</h2>
+            </div>
+
+            <div
+              id="sameProductsContainer"
+              class="row g-4 justify-content-evenly"
+            ></div>
+          </div>
+        </section>
+      </section>
+    </div>
+    <!-- /////////////////////////////////////// -->
+
+    <div id="footer"></div>
+    <script>
+      // Get Product ID from URL
+
+      async function getProduct() {
+        try {
+          // Get the current ID from URL every time
+          const params = new URLSearchParams(window.location.search);
+          const productId = Number(params.get("id"));
+
+          const response = await fetch(
+            "https://gist.githubusercontent.com/138momen/fffa5570c7d705de4148cb496e835366/raw/DBFoodieProject.json",
+          );
+
+          if (!response.ok) {
+            throw new Error("Failed to fetch products");
+          }
+
+          const data = await response.json();
+
+          const product = data.menu.find((product) => product.id === productId);
+
+          if (!product) {
+            throw new Error("Product not found");
+          }
+
+          displayProduct(product);
+
+          getSameProducts(product.category, product.id);
+        } catch (error) {
+          console.error(error);
+        }
+      }
+
+      getProduct();
+
+      // Get Same Products By ID ////////////////
+
+      async function getSameProducts(category, currentId) {
+        try {
+          const response = await fetch(
+            "https://gist.githubusercontent.com/138momen/fffa5570c7d705de4148cb496e835366/raw/DBFoodieProject.json",
+          );
+
+          if (!response.ok) {
+            throw new Error("Failed to fetch products");
+          }
+
+          const data = await response.json();
+
+          const sameProducts = data.menu
+            .filter(
+              (product) =>
+                product.category === category && product.id !== currentId,
+            )
+            .slice(0, 4);
+
+          displaySameProducts(sameProducts);
+        } catch (error) {
+          console.error(error);
+        }
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/component.js"></script>
+    <script src="./JS/cartBadge.js"></script>
+
+    <script src="./JS/productLogic.js"></script>
+  </body>
+</html>

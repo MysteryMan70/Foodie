@@ -1,0 +1,144 @@
+:root {
+  --primary-color: #ff6b35;
+  --secondary-color: #f7c948;
+  --text-color: #212529;
+  --background-color: #fffdf9;
+  --light-section: #f8f9fa;
+  --border-radius: 12px;
+  --font-family: "Poppins", sans-serif;
+}
+
+#about hr {
+  color: var(--primary-color);
+  margin: 0 0 2rem;
+  justify-self: center;
+  width: 50%;
+  opacity: 1;
+}
+
+#about .container-fluid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* About Section */
+
+#about .leftSec {
+  width: 100%;
+}
+
+#about .title {
+  color: var(--primary-color);
+}
+
+#about .desc {
+  margin: 0 auto;
+}
+
+#about .nums {
+  gap: 40px;
+  margin-top: 30px;
+}
+
+#about .numDetails p {
+  margin: 0;
+  font-size: small;
+}
+
+#about .leftNum,
+#about .rightNum {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#about .leftNum i,
+#about .rightNum i {
+  font-size: 32px;
+  color: var(--secondary-color);
+}
+
+#about .rightSec {
+  width: 100%;
+  margin-top: 40px;
+}
+
+#about .rightSec img {
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(33, 37, 41, 0.4);
+  height: auto;
+}
+
+/* Choose Us */
+
+#about .chooseCard {
+  border-radius: var(--border-radius);
+  transition: 0.3s;
+}
+
+.row > div[class*="col-"] .chooseCard {
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+/* Animation when appearing */
+#about .row > div[class*="col-"] .chooseCard.show {
+  animation: cardAppear 0.7s ease forwards;
+}
+
+#about .row > div[class*="col-"]:nth-child(1) .chooseCard.show {
+  animation-delay: 0.1s;
+}
+
+#about .row > div[class*="col-"]:nth-child(2) .chooseCard.show {
+  animation-delay: 0.2s;
+}
+
+#about .row > div[class*="col-"]:nth-child(3) .chooseCard.show {
+  animation-delay: 0.3s;
+}
+
+#about .row > div[class*="col-"]:nth-child(4) .chooseCard.show {
+  animation-delay: 0.4s;
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#about .chooseCard i {
+  width: 60px;
+  height: 60px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0 auto 15px;
+  font-size: 24px;
+}
+
+#about .chooseCard:hover {
+  box-shadow: 0 4px 12px rgba(33, 37, 41, 0.15);
+}
+
+/* Media */
+
+@media (min-width: 992px) {
+  #about .mx-lg-6 {
+    margin-left: 6rem !important;
+    margin-right: 6rem !important;
+  }
+}

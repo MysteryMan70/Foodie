@@ -1,0 +1,121 @@
+:root {
+  --primary-color: #ff6b35;
+  --secondary-color: #f7c948;
+  --text-color: #212529;
+  --background-color: #fffdf9;
+  --light-section: #f8f9fa;
+  --border-radius: 12px;
+  --font-family: "Poppins", sans-serif;
+}
+
+#productsContainer .card-img-top {
+  height: 220px;
+  object-fit: cover;
+}
+
+#productsContainer .productCard {
+  margin: 1rem 0;
+}
+
+#productsContainer .price {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+}
+
+#productsContainer .addCart {
+  background-color: var(--primary-color);
+  color: white;
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  transition: 0.3s;
+}
+
+#productsContainer .addCart:hover {
+  background-color: transparent;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+#productsContainer .addCart:active {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+  border-color: var(--primary-color) !important;
+  box-shadow: none !important;
+}
+
+#productsContainer .card {
+  cursor: pointer;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0.05, 0.09);
+}
+
+#productsContainer .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(255, 107, 53, 0.18);
+}
+
+#productsContainer .card-img-top {
+  height: 220px;
+  object-fit: cover;
+}
+
+#productsContainer .card-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#productsContainer .card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+#productsContainer .card-body .addCart {
+  margin-top: auto;
+}
+.favorite-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: white;
+    color: #ff6500;
+
+    font-size: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+
+    z-index: 2;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.favorite-btn:hover {
+    background-color: #ff6500;
+    color: white;
+    transform: scale(1.1);
+}
+.hover{
+  background-color: #e95700;
+  color: white;
+}
+/* Media */
+
+@media (min-width: 992px) {
+  #productsContainer .card-img-top {
+    height: 200px;
+  }
+}

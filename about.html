@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foodie-about</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+      integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./Css/style.css" />
+    <link rel="stylesheet" href="./Css/about.css" />
+    <style>
+      body {
+        font-family: var(--font-family);
+        color: var(--text-color);
+        background-color: var(--background-color);
+      }
+
+      .about-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ////////////////////////////////////////////////////// -->
+    <div id="navbar"></div>
+    <!-- ///////////////////////////////////////////////////// -->
+
+    <div class="container-fluid about-container my-5">
+      <section id="about">
+        <section
+          class="about mx-3 mx-lg-6 d-lg-flex align-items-lg-center gap-lg-5"
+        >
+          <div class="leftSec text-center text-lg-start">
+            <p class="title">Our Story</p>
+            <h1 class="fw-bold mb-lg-3">About Us</h1>
+
+            <p class="desc text-secondary m-0">
+              Foodie was founded with a simple mission:<br />
+              to bring delicious food to your doorstep.<br />
+              We partner with the best restaurants to ensure quality and fast
+              delivery.
+            </p>
+
+            <div class="nums d-none d-lg-flex text-start">
+              <div class="leftNum">
+                <i class="fa-solid fa-utensils fs-1"></i>
+                <div class="numDetails text-start">
+                  <p class="fw-bolder fs-6"><span>100</span>+</p>
+                  <p class="text-secondary">Restaurants</p>
+                </div>
+              </div>
+
+              <div class="rightNum d-flex">
+                <i class="fa-solid fa-user-tag fs-1"></i>
+                <div class="numDetails text-start">
+                  <p class="fw-bolder fs-6"><span>10K</span>+</p>
+                  <p class="text-secondary">Happy Customers</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="rightSec">
+            <img
+              class="rounded-3"
+              src="./Assests/restaurant.jpg"
+              alt="restaurant"
+            />
+            <div class="nums d-flex d-lg-none justify-content-center mt-5">
+              <div class="leftNum">
+                <i class="fa-solid fa-utensils fs-1"></i>
+                <div class="numDetails text-start">
+                  <p class="fw-bolder fs-6"><span>100</span>+</p>
+                  <p class="text-secondary">Restaurants</p>
+                </div>
+              </div>
+
+              <div class="rightNum d-flex">
+                <i class="fa-solid fa-user-tag fs-1"></i>
+                <div class="numDetails text-start">
+                  <p class="fw-bolder fs-6"><span>10K</span>+</p>
+                  <p class="text-secondary">Happy Customers</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <hr class="my-5" />
+        <section class="whyChoose py-5">
+          <div class="container">
+            <div class="text-center mb-5">
+              <h1 class="fw-bold">Why Choose Us?</h1>
+            </div>
+
+            <div class="row g-3">
+              <div class="col-12 col-md-6 col-lg-3">
+                <div class="chooseCard text-center mx-4 mx-lg-0 p-4 py-5 h-100">
+                  <i class="fa-solid fa-truck-fast fs-2 mb-3"></i>
+                  <h3 class="h5 fw-semibold">Fast Delivery</h3>
+                  <p class="mb-0 text-secondary">
+                    Get your favorite meals delivered quickly and fresh to your
+                    doorstep.
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-3">
+                <div class="chooseCard text-center mx-4 mx-lg-0 p-4 py-5 h-100">
+                  <i class="fa-solid fa-utensils fs-2 mb-3"></i>
+                  <h3 class="h5 fw-semibold">Quality Food</h3>
+                  <p class="mb-0 text-secondary">
+                    We work with trusted restaurants to bring you delicious,
+                    high-quality food.
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-3">
+                <div class="chooseCard text-center mx-4 mx-lg-0 p-4 py-5 h-100">
+                  <i class="fa-solid fa-wallet fs-2 mb-3"></i>
+                  <h3 class="h5 fw-semibold">Easy Payment</h3>
+                  <p class="mb-0 text-secondary">
+                    Enjoy simple and secure payment options for every order.
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-3">
+                <div class="chooseCard text-center mx-4 mx-lg-0 p-4 py-5 h-100">
+                  <i class="fa-solid fa-headset fs-2 mb-3"></i>
+                  <h3 class="h5 fw-semibold">24/7 Support</h3>
+                  <p class="mb-0 text-secondary">
+                    Our support team is always ready to help whenever you need
+                    us.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </div>
+
+    <div id="footer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/component.js"></script>
+    <script src="./JS/cartBadge.js"></script>
+
+    <script src="./JS/about.js"></script>
+  </body>
+</html>

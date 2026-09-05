@@ -1,0 +1,441 @@
+<!--~ Navbar -->
+<nav class="navbar navbar-expand-lg border-bottom border-light p-2">
+  <div class="container-fluid mx-3 mx-lg-5">
+    <!-- Logo -->
+    <a class="navbar-brand m-0" href="#">
+      <img
+        src="../Assests/2bf4ad7f-cb80-4d14-9aa6-267ef30dfe5e.png"
+        class="img-width me-1"
+        alt="Foodie Logo"
+      />
+      <span class="fw-bold fs-4"> Food<span class="text-color">i</span>e </span>
+    </a>
+
+    <!-- Mobile Toggle -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Content -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <!-- Links -->
+
+      <ul class="navbar-nav nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link me-2 transition font-weight" href="index.html">
+            Home
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link transition me-2 font-weight" href="about.html">
+            About
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link transition me-2 font-weight" href="Menu.html">
+            Menu
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link transition font-weight" href="Orders.html">
+            Orders
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="favorite.html" class="nav-link transition font-weight">
+            Favorites
+            <span id="favoriteDot" class="fav-dot"></span>
+          </a>
+        </li>
+      </ul>
+      <!-- Right Side -->
+      <div class="d-flex align-items-center gap-2 my-3">
+        <!-- Cart -->
+        <a
+          href="cart.html"
+          class="me-2 cart transition text-dark position-relative"
+        >
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span id="cartBadge"></span>
+        </a>
+
+        <!-- Login Button -->
+        <button
+          id="navLoginBtn"
+          type="button"
+          class="btn border btn-style transition buttonhover"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          <i class="fa-regular fa-user"></i>
+          Log in
+        </button>
+
+        <!-- User Dropdown -->
+        <!-- User Account -->
+        <div id="userDropdown" class="dropdown d-none">
+          <!-- User Circle Button -->
+          <button
+            id="userAccountBtn"
+            class="btn p-0 border-0 user-account-btn"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <span class="user-circle">
+              <i class="fa-regular fa-user"></i>
+            </span>
+          </button>
+
+          <!-- Account Dropdown -->
+          <ul
+            class="dropdown-menu dropdown-menu-lg-end account-dropdown shadow"
+          >
+            <!-- Account Info -->
+            <li class="px-3 py-2">
+              <div class="d-flex align-items-center gap-2">
+                <span class="user-circle small">
+                  <i class="fa-regular fa-user"></i>
+                </span>
+
+                <div>
+                  <div
+                    id="accountUsername"
+                    class="fw-bold text-truncate"
+                    style="max-width: 200px"
+                  >
+                    username
+                  </div>
+
+                  <small class="text-secondary">Account</small>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider my-1" />
+            </li>
+
+            <!-- Account Details -->
+            <li>
+              <div class="dropdown-item-text">
+                <div class="small text-secondary">Email</div>
+
+                <div id="userEmailText" class="fw-semibold text-break">
+                  user@example.com
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider my-1" />
+            </li>
+
+            <!-- Logout -->
+            <li>
+              <button
+                id="logoutBtn"
+                class="dropdown-item text-danger"
+                type="button"
+              >
+                <i class="fa-solid fa-right-from-bracket me-2"></i>
+                Logout
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!--~ Login Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog login-modal">
+    <div class="modal-content div">
+      <!-- Modal Header -->
+      <div class="modal-header text-center">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
+
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body">
+        <!-- Username -->
+        <div class="mb-3">
+          <label for="loginUsername" class="form-label"> Username </label>
+
+          <input
+            type="text"
+            class="form-control inputheight"
+            id="loginUsername"
+            placeholder="Enter your username"
+          />
+
+          <small id="loginUsernameError" class="text-danger d-none"></small>
+        </div>
+
+        <!-- Password -->
+        <div>
+          <label for="inputPassword5" class="form-label"> Password </label>
+
+          <div class="position-relative">
+            <input
+              type="password"
+              id="inputPassword5"
+              class="form-control inputheight pe-5"
+              placeholder="Enter your password"
+            />
+
+            <button
+              type="button"
+              id="togglePassword"
+              class="btn position-absolute top-50 end-0 translate-middle-y me-2 p-0 border-0"
+            >
+              <i class="fa-regular fa-eye"></i>
+            </button>
+          </div>
+
+          <small id="passwordError" class="text-danger d-none"></small>
+        </div>
+
+        <!-- Remember Me -->
+        <div class="mt-3">
+          <input type="checkbox" id="rememberMe" />
+
+          <label for="rememberMe"> Remember me </label>
+        </div>
+
+        <!-- Login Button -->
+        <div>
+          <button
+            type="button"
+            id="loginBtn"
+            class="btn mt-3 inputheight w-100 fw-bold btn-style transition buttonhover border"
+          >
+            Log In
+          </button>
+        </div>
+
+        <!-- Register -->
+        <div class="text-center m-2">
+          <h6>
+            Don't have an account?
+            <span id="openRegisterFromLogin" class="text-color" role="button">
+              Register
+            </span>
+          </h6>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--~ Register Modal -->
+  <div
+    class="modal fade"
+    id="registerModal"
+    tabindex="-1"
+    aria-labelledby="registerModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog login-modal">
+      <div class="modal-content div">
+        <!-- Modal Header -->
+        <div class="modal-header text-center">
+          <h1 class="modal-title fs-5" id="registerModalLabel">Register</h1>
+
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="modal-body">
+          <!-- Username -->
+          <div class="mb-3">
+            <label for="registerUsername" class="form-label"> Username </label>
+
+            <input
+              type="text"
+              class="form-control inputheight"
+              id="registerUsername"
+              placeholder="Enter your username"
+            />
+
+            <small
+              id="registerUsernameError"
+              class="text-danger d-none"
+            ></small>
+          </div>
+
+          <!-- Email -->
+          <div class="mb-3">
+            <label for="registerEmail" class="form-label"> Email </label>
+
+            <input
+              type="email"
+              class="form-control inputheight"
+              id="registerEmail"
+              placeholder="name@example.com"
+            />
+
+            <small id="registerEmailError" class="text-danger d-none"></small>
+          </div>
+
+          <!-- Password -->
+          <div class="mb-3">
+            <label for="registerPassword" class="form-label"> Password </label>
+
+            <div class="position-relative">
+              <input
+                type="password"
+                id="registerPassword"
+                class="form-control inputheight pe-5"
+                placeholder="Enter your password"
+              />
+
+              <button
+                type="button"
+                id="toggleRegisterPassword"
+                class="btn position-absolute top-50 end-0 translate-middle-y me-2 p-0 border-0"
+              >
+                <i class="fa-regular fa-eye"></i>
+              </button>
+            </div>
+
+            <small
+              id="registerPasswordError"
+              class="text-danger d-none"
+            ></small>
+          </div>
+
+          <!-- Confirm Password -->
+          <div>
+            <label for="confirmPassword" class="form-label">
+              Confirm Password
+            </label>
+
+            <div class="position-relative">
+              <input
+                type="password"
+                id="confirmPassword"
+                class="form-control inputheight pe-5"
+                placeholder="Confirm your password"
+              />
+
+              <button
+                type="button"
+                id="toggleConfirmPassword"
+                class="btn position-absolute top-50 end-0 translate-middle-y me-2 p-0 border-0"
+              >
+                <i class="fa-regular fa-eye"></i>
+              </button>
+            </div>
+
+            <small id="confirmPasswordError" class="text-danger d-none"></small>
+          </div>
+
+          <!-- Register Button -->
+          <div>
+            <button
+              type="button"
+              id="registerBtn"
+              class="btn mt-3 inputheight w-100 fw-bold btn-style transition buttonhover border"
+            >
+              Register
+            </button>
+          </div>
+        </div>
+
+        <!-- Login -->
+        <div class="text-center m-2">
+          <h6>
+            Already have an account?
+            <span id="openLoginFromRegister" class="text-color" role="button">
+              Log in
+            </span>
+          </h6>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--~ Login Required Modal -->
+  <div
+    class="modal fade"
+    id="loginRequiredModal"
+    tabindex="-1"
+    aria-labelledby="loginRequiredModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold" id="loginRequiredModalLabel">
+            Login Required
+          </h5>
+
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+
+        <div class="modal-body text-center py-4">
+          <i class="fa-regular fa-user fa-3x text-color mb-3"></i>
+
+          <h5 class="fw-bold">Please Login First</h5>
+
+          <p class="text-secondary mb-0">
+            You need to login to your account before continuing with your order.
+          </p>
+        </div>
+
+        <div class="modal-footer justify-content-center">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Cancel
+          </button>
+
+          <button
+            type="button"
+            id="goToLoginBtn"
+            class="btn btn-style"
+            data-bs-dismiss="modal"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            <i class="fa-regular fa-user me-1"></i>
+            Log in
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

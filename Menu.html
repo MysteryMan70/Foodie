@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- BS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+  <!-- FA -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+    integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- css -->
+  <link rel="stylesheet" href="Css/style.css" />
+  <link rel="stylesheet" href="Css/menu.css">
+  <title>Foodie-menu</title>
+</head>
+
+<body>
+  <!-- ////////////////////////////////////////////////////// -->
+  <div id="navbar"></div>
+  <!-- ///////////////////////////////////////////////////// -->
+
+  <!-- Menu Section -->
+  <section id="menu-section" class="py-5 mt-4">
+    <div class="container-fluid px-4 px-lg-5">
+      <div class="row">
+        <!--Categories -->
+        <div class="col-lg-2 col-md-3 mb-4">
+          <h4 class="fw-bold mb-4 ms-2">Categories</h4>
+          <ul class="nav flex-column categoryListGaps">
+    
+            <li class="navI" onclick="filterProducts('All')">
+              <a class="nav-link categoryLink active transition" href="javascript:void(0)">All</a>
+            </li>
+            <li class="navI" onclick="filterProducts('Pizza')">
+              <a class="nav-link categoryLink transition" href="javascript:void(0)">Pizza</a>
+            </li>
+            <li class="navI" onclick="filterProducts('Burger')">
+              <a class="nav-link categoryLink transition" href="javascript:void(0)">Burger</a>
+            </li>
+            <li class="navI" onclick="filterProducts('Pasta')">
+              <a class="nav-link categoryLink transition" href="javascript:void(0)">Pasta</a>
+            </li>
+            <li class="navI" onclick="filterProducts('Dessert')">
+              <a class="nav-link categoryLink transition" href="javascript:void(0)">Dessert</a>
+            </li>
+            <li class="navI" onclick="filterProducts('Drinks')">
+              <a class="nav-link categoryLink transition" href="javascript:void(0)">Drinks</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="col-lg-10 col-md-9">
+          <!-- search -->
+          <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3">
+            <!-- Search Bar -->
+            <div class="input-group searchWrapper w-50 shadow-sm">
+              <span class="input-group-text bg-white border-0 text-muted ps-3 rounded-start-4" id="search-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </span>
+              <input id="productsearch" type="text"
+                class="form-control border-0 py-2 shadow-none searchInput rounded-end-4"
+                placeholder="Search for food..." aria-label="Search" aria-describedby="search-icon" />
+            </div>
+
+            <!-- Sort Dropdown -->
+            <div class="d-flex align-items-center bg-white shadow-sm rounded-4 px-2">
+              <select id="sortDropdown"
+                class="form-select border-0 shadow-none sortDropdown fw-medium cursor-pointer rounded-4">
+                <option value="default">Sort by:</option>
+
+                <option value="popular">Popular</option>
+
+                <option value="low">Price: Low to High</option>
+
+                <option value="high">Price: High to Low</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4" id="productsContainer">
+          </div>
+
+          <!-- </div> -->
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <!-- /////////////////////////////////////// -->
+
+  <div id="footer"></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="JS/component.js"></script>
+  <script src="JS/menu.js"></script>
+  <script>
+  function goToProduct(id) {
+        window.location.href = `./product-details.html?id=${id}`;
+      }
+      </script>
+  <script src="./JS/cartBadge.js"></script>
+ 
+
+</body>
+
+</html>
