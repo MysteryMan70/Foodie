@@ -201,15 +201,14 @@ updateQuantity();
 // =====================================================
 
 const favoriteBtn = document.querySelector("#favoriteBtn");
-
 const favoriteIcon = favoriteBtn.querySelector("i");
 
 let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
+// Update favorite button
 function updateFavorite(productId) {
-  const isFavorite = favorites.includes(productId);
+  const isFavorite = favorites.some((product) => product.id === productId);
 
-  // عشان يقرأ من الlocalStorage لما أعمل ريفرش
   if (isFavorite) {
     favoriteBtn.classList.add("active");
 
@@ -223,21 +222,41 @@ function updateFavorite(productId) {
   }
 }
 
+// Add / Remove Favorite
 favoriteBtn.addEventListener("click", () => {
   const params = new URLSearchParams(window.location.search);
   const productId = Number(params.get("id"));
 
-  if (favorites.includes(productId)) {
+  // Check if product already exists
+  const existingProduct = favorites.find((product) => product.id === productId);
+
+  if (existingProduct) {
     // Remove from favorites
-    favorites = favorites.filter((id) => id !== productId);
+    favorites = favorites.filter((product) => product.id !== productId);
   } else {
-    // Add to favorites
-    favorites.push(productId);
+    // Get current product data from page
+    const product = {
+      id: productId,
+      name: document.querySelector("#name").textContent,
+      category: document.querySelector("#category").textContent,
+      price: Number(
+        document.querySelector("#price").textContent.replace("$", ""),
+      ),
+      imageUrl: document.querySelector(".productImage img").src,
+      rating: Number(document.querySelector("#rating").textContent),
+    };
+
+    favorites.push(product);
   }
 
+  // Save favorites
   localStorage.setItem("favorites", JSON.stringify(favorites));
 
+  // Update button
   updateFavorite(productId);
+
+  // Update favorite dot in navbar
+  updatefavoritedot();
 });
 
 // =====================================================

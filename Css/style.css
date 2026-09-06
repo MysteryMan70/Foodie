@@ -465,41 +465,56 @@ footer .img-width {
    Account Dropdown
 ===================================================== */
 
-.account-dropdown {
-  min-width: 260px;
+#navbar .account-dropdown {
+  --bs-dropdown-spacer: 10px;
 
-  border: none;
-  border-radius: 12px;
+  min-width: 260px !important;
+  border: none !important;
+  border-radius: 12px !important;
+  padding: 8px !important;
 
-  padding: 8px;
+  text-align: right !important;
 
-  margin-top: 8px !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Account Header */
+
+#navbar .account-dropdown .account-header .d-flex {
+  flex-direction: row-reverse !important;
+}
+
+#navbar .account-dropdown .account-user-info {
+  text-align: right !important;
 }
 
 /* Dropdown Items */
 
-.account-dropdown .dropdown-item {
-  border-radius: 8px;
-  padding: 10px 12px;
-
-  transition: 0.2s ease;
+#navbar .account-dropdown .dropdown-item {
+  width: 100%;
+  border-radius: 8px !important;
+  padding: 10px 12px !important;
+  text-align: right !important;
 }
 
-.account-dropdown .dropdown-item:hover {
-  background-color: var(--light-section);
+/* Email */
+
+#navbar .account-dropdown .dropdown-item-text {
+  padding: 8px 12px !important;
+  text-align: right !important;
 }
 
-/* Account Text */
+/* Divider */
 
-.account-dropdown .dropdown-item-text {
-  padding: 8px 12px;
+#navbar .account-dropdown .dropdown-divider {
+  margin: 5px 0 !important;
 }
 
-/* Prevent Email Overflow */
+/* Logout */
 
-#accountEmail,
-#userEmailText {
-  overflow-wrap: anywhere;
+#navbar .account-dropdown #logoutBtn {
+  width: 100%;
+  text-align: right !important;
 }
 
 /* Media */
@@ -557,5 +572,37 @@ footer .img-width {
   }
   #cart .end-span {
     text-align: center;
+  }
+}
+/* ================= MOBILE COLLAPSE MENU ================= */
+@media (max-width: 991px) {
+  #navbarNav {
+    position: absolute;
+    top: 100%;
+    right: 15px;
+    width: 270px;
+    background-color: #fffdf9;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    padding: 15px;
+    z-index: 1050;
+  }
+
+  #navbarNav .navbar-nav {
+    align-items: flex-end !important;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #navbarNav .d-flex.align-items-center {
+    flex-direction: row !important;
+    justify-content: flex-end !important;
+    width: 100%;
+    margin-top: 10px !important;
+    padding-top: 10px;
+    border-top: 1px solid #f0f0f0;
+    #navbarNav .cart {
+      margin-bottom: 0 !important;
+    }
   }
 }

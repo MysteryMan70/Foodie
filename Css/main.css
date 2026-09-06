@@ -76,39 +76,39 @@
   margin-top: auto;
 }
 .favorite-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
 
-    width: 42px;
-    height: 42px;
+  width: 42px;
+  height: 42px;
 
-    border: none;
-    border-radius: 50%;
+  border: none;
+  border-radius: 50%;
 
-    background-color: white;
-    color: #ff6500;
+  background-color: white;
+  color: #ff6500;
 
-    font-size: 20px;
+  font-size: 20px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
 
-    z-index: 2;
-    cursor: pointer;
+  z-index: 2;
+  cursor: pointer;
 
-    transition: 0.3s;
+  transition: 0.3s;
 }
 
 .favorite-btn:hover {
-    background-color: #ff6500;
-    color: white;
-    transform: scale(1.1);
+  background-color: #ff6500;
+  color: white;
+  transform: scale(1.1);
 }
-.hover{
+.hover {
   background-color: #e95700;
   color: white;
 }

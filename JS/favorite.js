@@ -24,7 +24,7 @@ function displayFavorite() {
 
       <div 
         class="card h-100 w-100 position-relative"
-        onclick="goToProduct(productId);"
+        onclick="goToProduct(${product.id})"
       >
 
         <!-- Image -->
@@ -93,10 +93,6 @@ function removeFromFavorite(productId) {
 
   displayFavorite();
   updatefavoritedot();
-}
-
-function handleProductClick(productId) {
-  goToProduct(productId);
 }
 
 // Add to Cart Logic//////////////////////
