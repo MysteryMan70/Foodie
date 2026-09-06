@@ -20,22 +20,24 @@ function displayProducts(productsToDisplay) {
   const container = document.getElementById("productsContainer");
   container.innerHTML = "";
 
+  let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
   for (const product of productsToDisplay) {
+    const isFavorite = favorites.some((item) => item.id === product.id);
+
     container.innerHTML += `
       <div class="productCard col-12 col-md-6 col-lg-3 d-flex">
 
         <div 
           class="card h-100 w-100 position-relative"
-          onclick="handleProductClick(${product.id})"
+          onclick="goToProduct(${product.id})"
         >
 
-          <!-- Favorite Button -->
           <button 
-            class="favorite-btn"
-                   onclick="event.stopPropagation(); addToFavorite(${product.id}, this)"
-
+            class="favorite-btn ${isFavorite ? "hover" : ""}"
+            onclick="event.stopPropagation(); addToFavorite(${product.id}, this)"
           >
-            <i class="fa-regular fa-heart"></i>
+            <i class="${isFavorite ? "fa-solid" : "fa-regular"} fa-heart"></i>
           </button>
 
           <img 
@@ -77,11 +79,6 @@ function displayProducts(productsToDisplay) {
       </div>
     `;
   }
-}
-
-function handleProductClick(productId) {
-  addToFavorite(productId);
-  goToProduct(productId);
 }
 
 function filterProducts(category) {
@@ -182,6 +179,8 @@ function addToFavorite(productId, btn) {
 
   let exists = favorites.some((item) => item.id === product.id);
 
+  const heartIcon = btn.querySelector("i");
+
   if (!exists) {
     favorites.push({
       id: product.id,
@@ -196,6 +195,9 @@ function addToFavorite(productId, btn) {
 
     btn.classList.add("hover");
 
+    heartIcon.classList.remove("fa-regular");
+    heartIcon.classList.add("fa-solid");
+
     console.log("Added to favorites");
   } else {
     favorites = favorites.filter((item) => item.id !== product.id);
@@ -204,8 +206,11 @@ function addToFavorite(productId, btn) {
 
     btn.classList.remove("hover");
 
+    heartIcon.classList.remove("fa-solid");
+    heartIcon.classList.add("fa-regular");
+
     console.log("Removed from favorites");
   }
-  updateFavoritePadge();
+
   updatefavoritedot();
 }

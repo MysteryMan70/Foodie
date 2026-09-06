@@ -25,7 +25,6 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-
   background-color: #fffdf9 !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
@@ -35,7 +34,7 @@
 }
 
 #navbar .text-color {
-  color: #ff6b35;
+  color: var(--primary-color);
 }
 
 #navbar .font-weight {
@@ -56,17 +55,17 @@
 }
 
 #navbar .nav-link:not(.active):hover {
-  color: #ff6b35 !important;
-  border-bottom-color: #ff6b35;
+  color: var(--primary-color) !important;
+  border-bottom-color: var(--primary-color);
 }
 
 #navbar .nav-link.active {
-  color: #ff6b35 !important;
+  color: var(--primary-color) !important;
   border-bottom-color: transparent !important;
 }
 
 #navbar .nav-link.active:hover {
-  color: #ff6b35 !important;
+  color: var(--primary-color) !important;
   border-bottom-color: transparent !important;
 }
 
@@ -75,44 +74,43 @@
 }
 
 #navbar .cart:hover {
-  color: #ff6b35;
+  color: var(--primary-color);
 }
 
 .btn-style {
-  background-color: #ff6b35 !important;
+  background-color: var(--primary-color) !important;
   border: 2px solid transparent !important;
   color: #fff !important;
 }
 
 .btn-style:hover {
-  border: 2px solid #ff6b35 !important;
+  border: 2px solid var(--primary-color) !important;
   background-color: #fff !important;
-  color: #ff6b35 !important;
+  color: var(--primary-color) !important;
 }
 
 .fav-dot {
   display: none;
+  position: absolute;
   width: 8px;
   height: 8px;
-  background-color: orange;
+  background-color: var(--primary-color);
   border-radius: 50%;
-  position: absolute;
   top: 8px;
   right: -2px;
 }
 
 #cartBadge {
+  display: none;
   position: absolute;
   top: -5px;
   right: -7px;
 
-  width: 9px;
-  height: 9px;
+  width: 8px;
+  height: 8px;
 
-  background-color: #ff6b35;
+  background-color: var(--primary-color);
   border-radius: 50%;
-
-  display: none;
 }
 /* ================= LOGIN MODAL ================= */
 
@@ -132,7 +130,7 @@
 }
 
 .text-color {
-  color: #ff6b35;
+  color: var(--primary-color);
 }
 
 .transition {
@@ -140,22 +138,14 @@
 }
 
 #home .buttonhover {
-  background-color: #ff6b35 !important;
+  background-color: var(--primary-color) !important;
   border: 2px solid transparent !important;
   color: #fff !important;
 }
 #home .buttonhover:hover {
-  border: 2px solid #ff6b35 !important;
+  border: 2px solid var(--primary-color) !important;
   background-color: #fff !important;
-  color: #ff6b35 !important;
-}
-
-.welcome {
-  border: 1px solid #f6f2eb;
-  border-radius: 15px;
-  padding-left: 11px;
-  width: 170px;
-  height: 25px;
+  color: var(--primary-color) !important;
 }
 
 .category-card {
@@ -190,17 +180,17 @@
 
 #home3 .product-title:hover {
   cursor: pointer !important;
-  color: #ff6b35 !important;
+  color: var(--primary-color) !important;
 }
 
 /* Offer */
 
 .bgcolor {
-  background-color: #ff6b35;
+  background-color: var(--primary-color);
 }
 
 .arrow-icon {
-  background-color: #ff6b35;
+  background-color: var(--primary-color);
   color: white;
   width: 24px;
   height: 24px;
@@ -215,7 +205,7 @@
 
 .offer-btn:hover .arrow-icon {
   background-color: white;
-  color: #ff6b35;
+  color: var(--primary-color);
   transform: translateX(3px);
 }
 
@@ -230,34 +220,34 @@
 }
 
 .text-color {
-  color: #ff6b35;
+  color: var(--primary-color);
 }
 
 .transition {
   transition: 0.5s ease;
 }
 
-.welcome {
+.welcome,
+#viewall {
   border: 1px solid #f6f2eb;
   border-radius: 15px;
-  padding-left: 11px;
-  width: 170px;
-  height: 25px;
+  padding: 0rem 1rem;
+  text-align: center;
 }
 
 #home3 .product-title:hover {
   cursor: pointer !important;
-  color: #ff6b35 !important;
+  color: var(--primary-color) !important;
 }
 
 /* Offer */
 
 .bgcolor {
-  background-color: #ff6b35;
+  background-color: var(--primary-color);
 }
 
 .arrow-icon {
-  background-color: #ff6b35;
+  background-color: var(--primary-color);
   color: white;
   width: 24px;
   height: 24px;
@@ -314,8 +304,8 @@ footer .img-width {
   transition: all 0.3s ease;
 }
 .media a:hover {
-  background-color: #ff6b35;
-  border-color: #ff6b35;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
   color: white;
   transform: translateY(-3px);
 }
@@ -332,11 +322,11 @@ footer .img-width {
 }
 #menu-section .categoryLink:hover {
   background-color: #f8f9fa;
-  color: #ff6b35 !important;
+  color: var(--primary-color) !important;
 }
 /* Active Sidebar Category */
 #menu-section .categoryLink.active {
-  background-color: #ff6b35 !important;
+  background-color: var(--primary-color) !important;
   color: #ffffff !important;
   box-shadow: 0 4px 10px rgba(255, 107, 53, 0.3);
 }

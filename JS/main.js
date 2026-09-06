@@ -68,8 +68,11 @@ function displayPopularProducts() {
     : popularProducts.slice(0, 4);
 
   popularContainer.innerHTML = "";
+  let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
   productsToShow.forEach((product) => {
+    const isFavorite = favorites.some((item) => item.id === product.id);
+
     popularContainer.innerHTML += `
   <div class="productCard col-12 col-md-6 col-lg-3 d-flex">
 
@@ -80,11 +83,11 @@ function displayPopularProducts() {
 
       <!-- Favorite Button -->
       <button 
-        class="favorite-btn"
-       onclick="event.stopPropagation(); addToFavorite(${product.id}, this)"
-      >
-        <i class="fa-regular fa-heart"></i>
-      </button>
+  class="favorite-btn ${isFavorite ? "hover" : ""}"
+  onclick="event.stopPropagation(); addToFavorite(${product.id}, this)"
+>
+  <i class="${isFavorite ? "fa-solid" : "fa-regular"} fa-heart"></i>
+</button>
 
       <img 
         src="${product.imageUrl}" 

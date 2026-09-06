@@ -56,7 +56,7 @@
 #about .leftNum i,
 #about .rightNum i {
   font-size: 32px;
-  color: var(--secondary-color);
+  color: #f7c948;
 }
 
 #about .rightSec {

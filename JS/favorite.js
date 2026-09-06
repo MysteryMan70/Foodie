@@ -5,75 +5,82 @@ function displayFavorite() {
 
   favoriteProducts.innerHTML = "";
 
+  if (favorites.length === 0) {
+    favoriteProducts.innerHTML = `
+  <div class="empty-favorites">
+    <i class="fa-regular fa-heart"></i>
+    <h3>Pick your favorite meal!</h3>
+    <p>Add your favorite meals and they'll appear here.</p>
+  </div>
+`;
+
+    return;
+  }
+
   favorites.forEach((product) => {
     favoriteProducts.innerHTML += `
 
-      <div class="productCard  col-12 col-md-6 col-lg-3 d-flex">
+    <div class="productCard col-12 col-md-6 col-lg-3 d-flex">
 
-        <div class="card h-100 " style="width:320px">
+      <div 
+        class="card h-100 w-100 position-relative"
+        onclick="goToProduct(productId);"
+      >
 
-          <!-- Image -->
-          <div class="position-relative">
+        <!-- Image -->
+        <img 
+          src="${product.imageUrl}" 
+          class="card-img-top"
+          alt="${product.name}"
+        />
 
-            <img 
-              src="${product.imageUrl}" 
-              class="card-img-top"
-              alt="${product.name}"
-            />
+        <!-- Favorite Button -->
+        <button 
+          class="favorite-btn"
+          onclick="removeFromFavorite(${product.id})"
+        >
+          <i class="fa-solid fa-heart"></i>
+        </button>
 
-            <!-- Favorite Button -->
-            <button 
-              class="favorite-btn"
-              onclick="removeFromFavorite(${product.id})"
-            >
-              <i class="fa-solid fa-heart"></i>
-            </button>
+        <!-- Card Body -->
+        <div class="card-body d-flex flex-column">
 
-          </div>
+          <h5 class="card-title fw-semibold mb-1">
+            ${product.name}
+          </h5>
 
+          <p class="text-secondary mb-2">
+            ${product.category}
+          </p>
 
-          <!-- Card Body -->
-          <div class="card-body d-flex flex-column">
+          <div class="d-flex mb-3 justify-content-between align-items-center">
 
-            <h5 class="card-title fw-semibold mb-1">
-              ${product.name}
-            </h5>
-
-            <p class="text-secondary mb-2">
-              ${product.category}
+            <p class="fw-bold price mb-0">
+              $${Number(product.price).toFixed(2)}
             </p>
 
-
-            <div class="d-flex mb-3 justify-content-between align-items-center">
-
-              <p class="fw-bold price mb-0">
-                $${Number(product.price).toFixed(2)}
-              </p>
-
-              <span>
-                <i class="fa-solid fa-star text-warning"></i>
-                ${product.rating}
-              </span>
-
-            </div>
-
-
-            <!-- Add Cart -->
-            <button 
-              class="btn addCart w-100 mt-auto"
-                onclick="addFavoriteToCart(${product.id})"
-            >
-              <i class="fa-solid fa-cart-shopping me-2"></i>
-              Add to Cart
-            </button>
+            <span>
+              <i class="fa-solid fa-star text-warning"></i>
+              ${product.rating}
+            </span>
 
           </div>
+
+          <!-- Add Cart -->
+          <button 
+            class="btn addCart w-100 mt-auto"
+            onclick="addFavoriteToCart(${product.id})"
+          >
+            Add to Cart
+          </button>
 
         </div>
 
       </div>
 
-    `;
+    </div>
+
+  `;
   });
 }
 
@@ -85,6 +92,11 @@ function removeFromFavorite(productId) {
   localStorage.setItem("favorites", JSON.stringify(favorites));
 
   displayFavorite();
+  updatefavoritedot();
+}
+
+function handleProductClick(productId) {
+  goToProduct(productId);
 }
 
 // Add to Cart Logic//////////////////////

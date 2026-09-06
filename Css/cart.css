@@ -1,3 +1,13 @@
+:root {
+  --primary-color: #ff6b35;
+  --secondary-color: #f7c948;
+  --text-color: #212529;
+  --background-color: #fffdf9;
+  --light-section: #f8f9fa;
+  --border-radius: 12px;
+  --font-family: "Poppins", sans-serif;
+}
+
 .header1 {
   font-size: 25px;
   font-weight: 700;
@@ -146,13 +156,26 @@ img {
 
 .Chackout {
   padding: 7px 15px;
-  background-color: #e8281a;
+  background-color: var(--primary-color);
   border: none;
   border-radius: 10px;
+  transition: 0.2s all ease;
+}
+
+#checkoutBtn:hover:not(:disabled) {
+  background-color: #e95700;
+}
+
+#checkoutBtn:disabled {
+  background-color: #adb5bd;
+  border-color: #adb5bd;
+  color: #ffffff;
+  cursor: not-allowed;
+  opacity: 0.7;
 }
 
 .number-color {
-  color: #e8281a;
+  color: var(--primary-color);
 }
 
 .content2 {
@@ -165,8 +188,8 @@ img {
 }
 
 .form-check-input:checked {
-  background-color: #e8281a;
-  border-color: #e8281a;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 
 .form-check-input:focus {
@@ -178,7 +201,7 @@ i:hover {
 }
 
 .form-control:focus {
-  border-color: #e8281a;
+  border-color: var(--primary-color);
   box-shadow: none;
 }
 

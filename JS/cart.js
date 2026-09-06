@@ -3,7 +3,7 @@
 const cartContainer = document.querySelector("#cartContainer");
 const subtotalElement = document.querySelector("#subtotal");
 const totalElement = document.querySelector("#cartTotal");
-const clearCartBtn = document.querySelector("#clearCartBtn");
+const clearCartBtns = document.querySelectorAll(".clearCartBtn");
 
 const checkoutBtn = document.querySelector("#checkoutBtn");
 const modalTotal = document.querySelector("#modalTotal");
@@ -206,12 +206,14 @@ function removeProduct(id) {
 // Clear Cart
 // =====================================================
 
-clearCartBtn.addEventListener("click", () => {
-  localStorage.removeItem("cart");
+clearCartBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    localStorage.removeItem("cart");
 
-  updateCartBadge();
+    updateCartBadge();
 
-  displayCart();
+    displayCart();
+  });
 });
 
 // =====================================================
