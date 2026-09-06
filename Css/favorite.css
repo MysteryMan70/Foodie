@@ -22,7 +22,7 @@ body::before {
   position: fixed;
   inset: -10px;
 
-  background-image: url("../imgs/background.png");
+  background-image: url("../imgs/favoriteBG.png");
   background-size: cover;
   background-position: center;
 
