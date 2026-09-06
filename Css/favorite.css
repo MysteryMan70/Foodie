@@ -22,7 +22,7 @@ body::before {
   position: fixed;
   inset: -10px;
 
-  background-image: url("/imgs/ChatGPT\ Image\ Aug\ 26\,\ 2026\,\ 09_02_26\ PM.png");
+  background-image: url("../imgs/background.png");
   background-size: cover;
   background-position: center;
 
@@ -41,7 +41,7 @@ hr {
 .favorites-page {
   min-height: 100vh;
 
-  background-image: url("./imgs/favorites-bg.png");
+  background-image: url("../imgs/favorites-bg.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
